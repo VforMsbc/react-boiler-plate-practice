@@ -9,6 +9,7 @@ import CategoryIcon from '@mui/icons-material/Category';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import PersonIcon from '@mui/icons-material/Person';
 import HomeIcon from '@mui/icons-material/Home';
+import AutoCompleteComponent from '../../../pages/components/auto-complete/AutoCompleteComponent';
 const ProtectedWrapper = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(true); // make default false
@@ -91,7 +92,7 @@ const Content = () => {
   ];
   return (
     <>
-      <SideBar sidebarItems={sidebarItems} />
+      <SideBar children={<AutoCompleteComponent/>} />
       <Box
         className={'content'}
         bgcolor={'background.paper'}
