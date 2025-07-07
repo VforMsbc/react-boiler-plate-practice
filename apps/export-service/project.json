@@ -1,0 +1,24 @@
+{
+  "name": "export-service",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/export-service/src",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "export-service:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "export-service:build:development"
+        },
+        "production": {
+          "buildTarget": "export-service:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,49 @@
+.mac_loader {
+  width: 100%;
+  display: flex;
+  padding: 10px 0;
+  align-items: center;
+  justify-content: center;
+}
+.mac_loader.inline_loader {
+  position: relative;
+  z-index: 8;
+  padding: 5px 0;
+}
+.mac_loader.fixed_loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 9;
+}
+.loader_item {
+  width: 25px;
+  height: 25px;
+  margin: 0;
+  background: transparent;
+  border-top: 4px solid #405270;
+  border-right: 4px solid transparent;
+  border-radius: 50%;
+  -webkit-animation: 1s spin linear infinite;
+  animation: 1s spin linear infinite;
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+.mac_loader .loader_text {
+  height: fit-content;
+  // font-size: 13px;
+  margin-left: 20px;
+  margin-bottom: 0;
+}
