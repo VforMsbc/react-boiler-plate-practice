@@ -1,7 +1,6 @@
 import { FC, createContext } from 'react';
 import { ThemeMode } from '../types/ThemeMode';
 import { useThemeMode } from '../hooks/useThemeMode';
-import { createTheme } from '@mui/material';
 
 export type ThemeModeContextType = {
   themeMode: ThemeMode;
@@ -12,15 +11,11 @@ export type ThemeModeContextType = {
 export interface ThemeModeProviderProps {
   children?: React.ReactNode;
 }
-const theme = createTheme({
-  palette: {
-    mode: 'dark',
-  },
-});
+
 export const ThemeModeContext = createContext<ThemeModeContextType>({
   themeMode: 'dark',
   toggleTheme: () => {},
-  setThemeMode: (mode: ThemeMode) => {!mode},
+  setThemeMode: () => {},
 });
 
 const ThemeModeProvider: FC<ThemeModeProviderProps> = ({ children }) => {

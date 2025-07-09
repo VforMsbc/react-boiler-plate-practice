@@ -1,13 +1,14 @@
 import { Box, IconButton } from '@mui/material';
 import 'ag-grid-community/styles/ag-grid.css';
-import 'ag-grid-community/styles/ag-theme-alpine.css';
+import 'ag-grid-community/styles/ag-theme-material.css';
 // import '@/assets/scss/agGrid.scss';
 import { IParms, Props } from './type';
 import { usePagination } from './Pagination.hooks';
 import { gridIcons } from './style';
 import { TickIcon, EditIcon } from '../../../../assets/Svg/index';
 // import { InlineLoader } from 'apps/web/src/util/loader';
-// import PaginationComponent from '../../../Pagination';
+import PaginationComponent from './PaginationComponent';
+
 import { MGrid } from '@jp/material-core-master';
 import gridheadCells from './util';
 import useAgGrid from './AgGrid.hooks';
@@ -16,10 +17,12 @@ export default function AgGridTable({
   list,
   isLoading,
   handleOpenDialog,
+  columnDefs,
 }: Props) {
   const { defaultColDef, getRowHeight } = useAgGrid();
   const pagination = true;
   const paginationPageSize = 10;
+
   const {
     currentItems,
     itemsPerPage,
@@ -28,6 +31,7 @@ export default function AgGridTable({
     indexOfLastItem,
     handleItemsPerPageChange,
     setCurrentPage,
+    setItemsPerPage
   } = usePagination(list);
 
   const components = {
@@ -62,12 +66,12 @@ export default function AgGridTable({
   };
 
   return (
-    <Box className="ag-theme-alpine" width={'100%'} height={'100%'}>
+    <Box className="" width={'100%'} height={'100%'}>
       <MGrid
-        pagination={pagination}
-        paginationPageSize={paginationPageSize}
-      
-        columnDefs={gridheadCells}
+        // pagination={pagination}
+        // paginationPageSize={paginationPageSize}
+        // paginationAutoPageSize={true}
+        columnDefs={columnDefs}
         rowData={currentItems}
         onCellClicked={() => {}}
         rowSelection="single"
@@ -79,16 +83,16 @@ export default function AgGridTable({
         {...gridOptions}
       />
 
-      {/* <PaginationComponent
+      <PaginationComponent
         totalItems={list.length}
         itemsPerPage={itemsPerPage}
         currentPage={currentPage}
         onChangeItemsPerPage={handleItemsPerPageChange}
         setCurrentPage={setCurrentPage}
-        list={list}
         indexOfFirstItem={indexOfFirstItem}
         indexOfLastItem={indexOfLastItem}
-      /> */}
+        setItemsPerPage={setItemsPerPage}
+      />
     </Box>
   );
 }

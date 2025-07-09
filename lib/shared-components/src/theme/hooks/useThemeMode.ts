@@ -4,7 +4,7 @@ import { ThemeMode } from "..";
 export const THEME_MODE_KEY = "ThemeModeKey";
 
 export const useThemeMode = () => {
-  const [themeMode, setThemeMode] = useState<ThemeMode>("light");
+  const [themeMode, setThemeMode] = useState<ThemeMode>("dark");
 
   useLayoutEffect(() => {
     if (localStorage.getItem(THEME_MODE_KEY)) {

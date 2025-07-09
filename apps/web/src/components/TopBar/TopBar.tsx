@@ -4,6 +4,7 @@ import {
   createTheme,
   IconButton,
   Typography,
+  useTheme,
 } from '@mui/material';
 import * as style from './style';
 import { useContext, useState } from 'react';
@@ -14,11 +15,8 @@ const TopBar = ({ title }: { title: string }) => {
   // const [title] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const { themeMode, toggleTheme } = useContext(ThemeModeContext);
-  const theme = createTheme({
-    palette: {
-      mode: themeMode === 'dark' ? 'dark' : 'light',
-    },
-  });
+
+  const theme = useTheme();
 
   return (
     <Box sx={style.topBar}>

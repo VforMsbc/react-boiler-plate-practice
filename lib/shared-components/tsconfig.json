@@ -5,9 +5,12 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
+    "module": "ESNext",
+     "moduleResolution": "Node",
+     "resolveJsonModule": true
   },
   "files": [],
-  "include": [],
+    "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.json"],
   "references": [
     {
       "path": "./tsconfig.lib.json",

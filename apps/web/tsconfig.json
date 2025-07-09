@@ -2,23 +2,22 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "allowJs": false,
-    "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "types": [
-      "vite/client",
-      "vitest"
-    ],
+    "types": ["vite/client", "vitest"],
+    "resolveJsonModule": true,
+    "esModuleInterop": true
+    
   },
   "files": [],
-  "include": [],
+ "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.json"],
   "references": [
     {
       "path": "./tsconfig.app.json",
       "composite": true
     },
     {
-      "path": "./tsconfig.spec.json",
+      "path": "./tsconfig.spec.json"
     }
   ],
   "extends": "../../tsconfig.base.json"

@@ -1,0 +1,794 @@
+[
+    {
+        "id": 1,
+        "department": "Qtech",
+        "teamLeads": [
+            {
+                "label": "Hitesh Panchal",
+                "id": 1,
+                "role": "Team Lead",
+                "teamMembers": ["Ekta", "Nidhi", "Jainam"],
+                "projects": [
+                    {
+                        "label": "Google",
+                        "id": 1,
+                        "type": "Web App",
+                        "tools": ["React", "Node.js"],
+                        "noOfSprints": 20,
+                        "noOfSprintsCompleted": 5,
+                        "deadline": "2023-12-31",
+                        "milestones": 5,
+                        "milestonesAchieved": 1,
+                        "progress": 25
+                    },
+                    {
+                        "label": "Meta",
+                        "id": 2,
+                        "type": "Mobile App",
+                        "tools": ["Flutter", "Firebase"],
+                        "noOfSprints": 10,
+                        "noOfSprintsCompleted": 8,
+                        "deadline": "2024-06-01",
+                        "milestones": 4,
+                        "milestonesAchieved": 3,
+                        "progress": 80
+                    }
+                ]
+            },
+            {
+                "label": "Dinesh Suthar",
+                "id": 2,
+                "role": "Team Lead",
+                "teamMembers": ["Vrutika", "Amit"],
+                "projects": [
+                    {
+                        "label": "Facebook",
+                        "id": 1,
+                        "type": "Web App",
+                        "tools": ["React", "Node.js"],
+                        "noOfSprints": 15,
+                        "noOfSprintsCompleted": 10,
+                        "deadline": "2024-01-15",
+                        "milestones": 3,
+                        "milestonesAchieved": 2,
+                        "progress": 66
+                    },
+                    {
+                        "label": "Whatsapp",
+                        "id": 2,
+                        "type": "Mobile App",
+                        "tools": ["Flutter", "Firebase"],
+                        "noOfSprints": 8,
+                        "noOfSprintsCompleted": 6,
+                        "deadline": "2024-03-01",
+                        "milestones": 4,
+                        "milestonesAchieved": 3,
+                        "progress": 75
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "department": "Design",
+        "teamLeads": [
+            {
+                "label": "Priya Sharma",
+                "id": 1,
+                "role": "Team Lead",
+                "teamMembers": ["Ankit", "Megha"],
+                "projects": [
+                    {
+                        "label": "UI Revamp",
+                        "id": 1,
+                        "type": "Web App",
+                        "tools": ["Figma", "Adobe XD"],
+                        "noOfSprints": 8,
+                        "noOfSprintsCompleted": 4,
+                        "deadline": "2024-05-30",
+                        "milestones": 3,
+                        "milestonesAchieved": 1,
+                        "progress": 50
+                    },
+                    {
+                        "label": "Brand Kit",
+                        "id": 2,
+                        "type": "Design System",
+                        "tools": ["Sketch", "Zeplin"],
+                        "noOfSprints": 6,
+                        "noOfSprintsCompleted": 3,
+                        "deadline": "2024-08-15",
+                        "milestones": 2,
+                        "milestonesAchieved": 1,
+                        "progress": 50
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "department": "QA",
+        "teamLeads": [
+            {
+                "label": "Rahul Mehta",
+                "id": 1,
+                "role": "Team Lead",
+                "teamMembers": ["Sneha", "Karan"],
+                "projects": [
+                    {
+                        "label": "Automation Suite",
+                        "id": 1,
+                        "type": "Web App",
+                        "tools": ["Selenium", "Jest"],
+                        "noOfSprints": 6,
+                        "noOfSprintsCompleted": 3,
+                        "deadline": "2024-07-15",
+                        "milestones": 2,
+                        "milestonesAchieved": 1,
+                        "progress": 50
+                    },
+                    {
+                        "label": "Regression Testing",
+                        "id": 2,
+                        "type": "Testing",
+                        "tools": ["Cypress", "Mocha"],
+                        "noOfSprints": 5,
+                        "noOfSprintsCompleted": 2,
+                        "deadline": "2024-09-01",
+                        "milestones": 2,
+                        "milestonesAchieved": 1,
+                        "progress": 40
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "department": "HR",
+        "teamLeads": [
+            {
+                "label": "Sonal Patel",
+                "id": 1,
+                "role": "Team Lead",
+                "teamMembers": ["Ravi", "Neha"],
+                "projects": [
+                    {
+                        "label": "Recruitment Drive",
+                        "id": 1,
+                        "type": "Campaign",
+                        "tools": ["LinkedIn", "Excel"],
+                        "noOfSprints": 4,
+                        "noOfSprintsCompleted": 2,
+                        "deadline": "2024-04-10",
+                        "milestones": 2,
+                        "milestonesAchieved": 1,
+                        "progress": 50
+                    },
+                    {
+                        "label": "Employee Engagement",
+                        "id": 2,
+                        "type": "Initiative",
+                        "tools": ["SurveyMonkey", "Slack"],
+                        "noOfSprints": 3,
+                        "noOfSprintsCompleted": 1,
+                        "deadline": "2024-06-20",
+                        "milestones": 1,
+                        "milestonesAchieved": 0,
+                        "progress": 33
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "department": "Marketing",
+        "teamLeads": [
+            {
+                "label": "Aakash Verma",
+                "id": 1,
+                "role": "Team Lead",
+                "teamMembers": ["Simran", "Raj"],
+                "projects": [
+                    {
+                        "label": "Product Launch",
+                        "id": 1,
+                        "type": "Campaign",
+                        "tools": ["Mailchimp", "Canva"],
+                        "noOfSprints": 5,
+                        "noOfSprintsCompleted": 3,
+                        "deadline": "2024-05-01",
+                        "milestones": 2,
+                        "milestonesAchieved": 1,
+                        "progress": 60
+                    },
+                    {
+                        "label": "SEO Optimization",
+                        "id": 2,
+                        "type": "Web",
+                        "tools": ["Google Analytics", "Ahrefs"],
+                        "noOfSprints": 6,
+                        "noOfSprintsCompleted": 4,
+                        "deadline": "2024-07-10",
+                        "milestones": 3,
+                        "milestonesAchieved": 2,
+                        "progress": 66
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "department": "Sales",
+        "teamLeads": [
+            {
+                "label": "Manish Gupta",
+                "id": 1,
+                "role": "Team Lead",
+                "teamMembers": ["Pooja", "Suresh"],
+                "projects": [
+                    {
+                        "label": "Lead Generation",
+                        "id": 1,
+                        "type": "CRM",
+                        "tools": ["Salesforce", "HubSpot"],
+                        "noOfSprints": 7,
+                        "noOfSprintsCompleted": 5,
+                        "deadline": "2024-08-01",
+                        "milestones": 3,
+                        "milestonesAchieved": 2,
+                        "progress": 71
+                    },
+                    {
+                        "label": "Client Onboarding",
+                        "id": 2,
+                        "type": "Process",
+                        "tools": ["DocuSign", "Trello"],
+                        "noOfSprints": 4,
+                        "noOfSprintsCompleted": 2,
+                        "deadline": "2024-09-15",
+                        "milestones": 2,
+                        "milestonesAchieved": 1,
+                        "progress": 50
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "department": "Support",
+        "teamLeads": [
+            {
+                "label": "Ritika Jain",
+                "id": 1,
+                "role": "Team Lead",
+                "teamMembers": ["Arjun", "Deepa"],
+                "projects": [
+                    {
+                        "label": "Ticketing System",
+                        "id": 1,
+                        "type": "Web App",
+                        "tools": ["Zendesk", "Freshdesk"],
+                        "noOfSprints": 6,
+                        "noOfSprintsCompleted": 3,
+                        "deadline": "2024-10-01",
+                        "milestones": 2,
+                        "milestonesAchieved": 1,
+                        "progress": 50
+                    },
+                    {
+                        "label": "Knowledge Base",
+                        "id": 2,
+                        "type": "Documentation",
+                        "tools": ["Confluence", "Notion"],
+                        "noOfSprints": 5,
+                        "noOfSprintsCompleted": 2,
+                        "deadline": "2024-11-15",
+                        "milestones": 2,
+                        "milestonesAchieved": 1,
+                        "progress": 40
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "department": "DevOps",
+        "teamLeads": [
+            {
+                "label": "Nikhil Joshi",
+                "id": 1,
+                "role": "Team Lead",
+                "teamMembers": ["Vikas", "Rohit"],
+                "projects": [
+                    {
+                        "label": "CI/CD Pipeline",
+                        "id": 1,
+                        "type": "Infrastructure",
+                        "tools": ["Jenkins", "Docker"],
+                        "noOfSprints": 8,
+                        "noOfSprintsCompleted": 6,
+                        "deadline": "2024-07-30",
+                        "milestones": 3,
+                        "milestonesAchieved": 2,
+                        "progress": 75
+                    },
+                    {
+                        "label": "Cloud Migration",
+                        "id": 2,
+                        "type": "Cloud",
+                        "tools": ["AWS", "Terraform"],
+                        "noOfSprints": 10,
+                        "noOfSprintsCompleted": 7,
+                        "deadline": "2024-12-01",
+                        "milestones": 4,
+                        "milestonesAchieved": 3,
+                        "progress": 70
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "department": "Content",
+        "teamLeads": [
+            {
+                "label": "Shreya Desai",
+                "id": 1,
+                "role": "Team Lead",
+                "teamMembers": ["Isha", "Tarun"],
+                "projects": [
+                    {
+                        "label": "Blog Series",
+                        "id": 1,
+                        "type": "Writing",
+                        "tools": ["WordPress", "Grammarly"],
+                        "noOfSprints": 4,
+                        "noOfSprintsCompleted": 2,
+                        "deadline": "2024-06-15",
+                        "milestones": 2,
+                        "milestonesAchieved": 1,
+                        "progress": 50
+                    },
+                    {
+                        "label": "Video Tutorials",
+                        "id": 2,
+                        "type": "Media",
+                        "tools": ["Premiere Pro", "YouTube"],
+                        "noOfSprints": 5,
+                        "noOfSprintsCompleted": 3,
+                        "deadline": "2024-08-20",
+                        "milestones": 2,
+                        "milestonesAchieved": 1,
+                        "progress": 60
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "department": "Finance",
+        "teamLeads": [
+            {
+                "label": "Kavita Shah",
+                "id": 1,
+                "role": "Team Lead",
+                "teamMembers": ["Harsh", "Mona"],
+                "projects": [
+                    {
+                        "label": "Budget Planning",
+                        "id": 1,
+                        "type": "Analysis",
+                        "tools": ["Excel", "Power BI"],
+                        "noOfSprints": 6,
+                        "noOfSprintsCompleted": 4,
+                        "deadline": "2024-09-30",
+                        "milestones": 2,
+                        "milestonesAchieved": 1,
+                        "progress": 66
+                    },
+                    {
+                        "label": "Expense Tracking",
+                        "id": 2,
+                        "type": "App",
+                        "tools": ["QuickBooks", "Zoho"],
+                        "noOfSprints": 5,
+                        "noOfSprintsCompleted": 2,
+                        "deadline": "2024-10-20",
+                        "milestones": 2,
+                        "milestonesAchieved": 1,
+                        "progress": 40
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "department": "Legal",
+        "teamLeads": [
+            {
+                "label": "Aarti Nair",
+                "id": 1,
+                "role": "Team Lead",
+                "teamMembers": ["Rohan", "Priyanka"],
+                "projects": [
+                    {
+                        "label": "Contract Review",
+                        "id": 1,
+                        "type": "Compliance",
+                        "tools": ["DocuSign", "Word"],
+                        "noOfSprints": 5,
+                        "noOfSprintsCompleted": 3,
+                        "deadline": "2024-08-10",
+                        "milestones": 2,
+                        "milestonesAchieved": 1,
+                        "progress": 60
+                    },
+                    {
+                        "label": "Policy Update",
+                        "id": 2,
+                        "type": "Documentation",
+                        "tools": ["Google Docs", "Slack"],
+                        "noOfSprints": 4,
+                        "noOfSprintsCompleted": 2,
+                        "deadline": "2024-09-05",
+                        "milestones": 2,
+                        "milestonesAchieved": 1,
+                        "progress": 50
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "department": "Procurement",
+        "teamLeads": [
+            {
+                "label": "Suresh Kumar",
+                "id": 1,
+                "role": "Team Lead",
+                "teamMembers": ["Anjali", "Deepak"],
+                "projects": [
+                    {
+                        "label": "Vendor Onboarding",
+                        "id": 1,
+                        "type": "Process",
+                        "tools": ["SAP", "Excel"],
+                        "noOfSprints": 6,
+                        "noOfSprintsCompleted": 4,
+                        "deadline": "2024-07-20",
+                        "milestones": 2,
+                        "milestonesAchieved": 1,
+                        "progress": 66
+                    },
+                    {
+                        "label": "Inventory Management",
+                        "id": 2,
+                        "type": "System",
+                        "tools": ["Oracle", "Power BI"],
+                        "noOfSprints": 5,
+                        "noOfSprintsCompleted": 3,
+                        "deadline": "2024-10-10",
+                        "milestones": 2,
+                        "milestonesAchieved": 1,
+                        "progress": 60
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "department": "Operations",
+        "teamLeads": [
+            {
+                "label": "Meena Singh",
+                "id": 1,
+                "role": "Team Lead",
+                "teamMembers": ["Vivek", "Rashmi"],
+                "projects": [
+                    {
+                        "label": "Process Automation",
+                        "id": 1,
+                        "type": "Automation",
+                        "tools": ["UiPath", "Python"],
+                        "noOfSprints": 7,
+                        "noOfSprintsCompleted": 5,
+                        "deadline": "2024-09-25",
+                        "milestones": 3,
+                        "milestonesAchieved": 2,
+                        "progress": 71
+                    },
+                    {
+                        "label": "Resource Allocation",
+                        "id": 2,
+                        "type": "Planning",
+                        "tools": ["Excel", "Trello"],
+                        "noOfSprints": 4,
+                        "noOfSprintsCompleted": 2,
+                        "deadline": "2024-11-01",
+                        "milestones": 2,
+                        "milestonesAchieved": 1,
+                        "progress": 50
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "department": "Analytics",
+        "teamLeads": [
+            {
+                "label": "Rajat Kapoor",
+                "id": 1,
+                "role": "Team Lead",
+                "teamMembers": ["Snehal", "Gaurav"],
+                "projects": [
+                    {
+                        "label": "Data Dashboard",
+                        "id": 1,
+                        "type": "BI",
+                        "tools": ["Tableau", "SQL"],
+                        "noOfSprints": 8,
+                        "noOfSprintsCompleted": 6,
+                        "deadline": "2024-08-30",
+                        "milestones": 3,
+                        "milestonesAchieved": 2,
+                        "progress": 75
+                    },
+                    {
+                        "label": "Predictive Analysis",
+                        "id": 2,
+                        "type": "ML",
+                        "tools": ["Python", "scikit-learn"],
+                        "noOfSprints": 6,
+                        "noOfSprintsCompleted": 4,
+                        "deadline": "2024-10-15",
+                        "milestones": 2,
+                        "milestonesAchieved": 1,
+                        "progress": 66
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "department": "Research",
+        "teamLeads": [
+            {
+                "label": "Tanvi Deshmukh",
+                "id": 1,
+                "role": "Team Lead",
+                "teamMembers": ["Aakash", "Neeraj"],
+                "projects": [
+                    {
+                        "label": "Market Study",
+                        "id": 1,
+                        "type": "Survey",
+                        "tools": ["SurveyMonkey", "Excel"],
+                        "noOfSprints": 5,
+                        "noOfSprintsCompleted": 3,
+                        "deadline": "2024-09-10",
+                        "milestones": 2,
+                        "milestonesAchieved": 1,
+                        "progress": 60
+                    },
+                    {
+                        "label": "Competitor Analysis",
+                        "id": 2,
+                        "type": "Analysis",
+                        "tools": ["Google Trends", "PowerPoint"],
+                        "noOfSprints": 4,
+                        "noOfSprintsCompleted": 2,
+                        "deadline": "2024-10-05",
+                        "milestones": 2,
+                        "milestonesAchieved": 1,
+                        "progress": 50
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "department": "Training",
+        "teamLeads": [
+            {
+                "label": "Vivek Sharma",
+                "id": 1,
+                "role": "Team Lead",
+                "teamMembers": ["Sonia", "Rajat"],
+                "projects": [
+                    {
+                        "label": "Onboarding Program",
+                        "id": 1,
+                        "type": "Workshop",
+                        "tools": ["Zoom", "Google Slides"],
+                        "noOfSprints": 6,
+                        "noOfSprintsCompleted": 4,
+                        "deadline": "2024-08-15",
+                        "milestones": 2,
+                        "milestonesAchieved": 1,
+                        "progress": 66
+                    },
+                    {
+                        "label": "Skill Upgrade",
+                        "id": 2,
+                        "type": "Course",
+                        "tools": ["Udemy", "Coursera"],
+                        "noOfSprints": 5,
+                        "noOfSprintsCompleted": 3,
+                        "deadline": "2024-09-20",
+                        "milestones": 2,
+                        "milestonesAchieved": 1,
+                        "progress": 60
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "department": "Security",
+        "teamLeads": [
+            {
+                "label": "Aman Chawla",
+                "id": 1,
+                "role": "Team Lead",
+                "teamMembers": ["Ritu", "Kishore"],
+                "projects": [
+                    {
+                        "label": "Vulnerability Assessment",
+                        "id": 1,
+                        "type": "Audit",
+                        "tools": ["Nessus", "Burp Suite"],
+                        "noOfSprints": 7,
+                        "noOfSprintsCompleted": 5,
+                        "deadline": "2024-10-25",
+                        "milestones": 3,
+                        "milestonesAchieved": 2,
+                        "progress": 71
+                    },
+                    {
+                        "label": "Incident Response",
+                        "id": 2,
+                        "type": "Process",
+                        "tools": ["Jira", "Slack"],
+                        "noOfSprints": 4,
+                        "noOfSprintsCompleted": 2,
+                        "deadline": "2024-11-10",
+                        "milestones": 2,
+                        "milestonesAchieved": 1,
+                        "progress": 50
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "department": "Customer Success",
+        "teamLeads": [
+            {
+                "label": "Neha Agarwal",
+                "id": 1,
+                "role": "Team Lead",
+                "teamMembers": ["Sahil", "Divya"],
+                "projects": [
+                    {
+                        "label": "Feedback Loop",
+                        "id": 1,
+                        "type": "Survey",
+                        "tools": ["Typeform", "Excel"],
+                        "noOfSprints": 5,
+                        "noOfSprintsCompleted": 3,
+                        "deadline": "2024-09-30",
+                        "milestones": 2,
+                        "milestonesAchieved": 1,
+                        "progress": 60
+                    },
+                    {
+                        "label": "Churn Analysis",
+                        "id": 2,
+                        "type": "Analysis",
+                        "tools": ["Power BI", "SQL"],
+                        "noOfSprints": 4,
+                        "noOfSprintsCompleted": 2,
+                        "deadline": "2024-10-25",
+                        "milestones": 2,
+                        "milestonesAchieved": 1,
+                        "progress": 50
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "department": "Administration",
+        "teamLeads": [
+            {
+                "label": "Pankaj Jain",
+                "id": 1,
+                "role": "Team Lead",
+                "teamMembers": ["Kavya", "Ramesh"],
+                "projects": [
+                    {
+                        "label": "Facility Upgrade",
+                        "id": 1,
+                        "type": "Infrastructure",
+                        "tools": ["Excel", "AutoCAD"],
+                        "noOfSprints": 6,
+                        "noOfSprintsCompleted": 4,
+                        "deadline": "2024-08-30",
+                        "milestones": 2,
+                        "milestonesAchieved": 1,
+                        "progress": 66
+                    },
+                    {
+                        "label": "Asset Management",
+                        "id": 2,
+                        "type": "System",
+                        "tools": ["SAP", "Oracle"],
+                        "noOfSprints": 5,
+                        "noOfSprintsCompleted": 3,
+                        "deadline": "2024-10-10",
+                        "milestones": 2,
+                        "milestonesAchieved": 1,
+                        "progress": 60
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "department": "Strategy",
+        "teamLeads": [
+            {
+                "label": "Rohit Bansal",
+                "id": 1,
+                "role": "Team Lead",
+                "teamMembers": ["Mehul", "Sakshi"],
+                "projects": [
+                    {
+                        "label": "Growth Plan",
+                        "id": 1,
+                        "type": "Planning",
+                        "tools": ["PowerPoint", "Excel"],
+                        "noOfSprints": 7,
+                        "noOfSprintsCompleted": 5,
+                        "deadline": "2024-09-15",
+                        "milestones": 3,
+                        "milestonesAchieved": 2,
+                        "progress": 71
+                    },
+                    {
+                        "label": "Market Expansion",
+                        "id": 2,
+                        "type": "Research",
+                        "tools": ["Google Analytics", "SurveyMonkey"],
+                        "noOfSprints": 4,
+                        "noOfSprintsCompleted": 2,
+                        "deadline": "2024-11-01",
+                        "milestones": 2,
+                        "milestonesAchieved": 1,
+                        "progress": 50
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import { useEffect, useState } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import { TopBar } from '../../../components/TopBar';
 import { getLocalAuth } from '../../../util/getLocalAuth';
 import { SideBar } from '../../../components/SideBar';
@@ -9,6 +9,9 @@ import CategoryIcon from '@mui/icons-material/Category';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import PersonIcon from '@mui/icons-material/Person';
 import HomeIcon from '@mui/icons-material/Home';
+import AutoCompleteComponent from '../../../pages/components/auto-complete/AutoCompleteComponent';
+import Dashboard from '../../../pages/components/dashboard/Dashboard';
+
 const ProtectedWrapper = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(true); // make default false
@@ -40,58 +43,68 @@ const ProtectedWrapper = () => {
 export default ProtectedWrapper;
 
 const Content = () => {
+  const [filters, setFilters] = useState<{
+    departmentId: string | null;
+    teamLeadId: string | null;
+    projectId: string | null;
+  }>({ departmentId: null, teamLeadId: null, projectId: null });
+
+  const handleFilterSubmit = (newFilters: {
+    departmentId: string | null;
+    teamLeadId: string | null;
+    projectId: string | null;
+  }) => {
+    setFilters(newFilters);
+  };
   const sidebarItems: ISidebarData[] = [
     {
-      id: "1",
-      label: "Home",
-      link: "/home",
+      id: '1',
+      label: 'Home',
+      link: '/home',
       isParent: false,
       isDisabled: false,
       checked: false,
       indeterminate: false,
-      icon: <HomeIcon/>,
-      children: []
+      icon: <HomeIcon />,
+      children: [],
     },
     {
-      id: "2",
-      label: "Products",
-      link: "/products",
+      id: '2',
+      label: 'Products',
+      link: '/products',
       isParent: false,
       isDisabled: false,
       checked: false,
       indeterminate: false,
-      icon: <CategoryIcon/>,
-      children: []
+      icon: <CategoryIcon />,
+      children: [],
     },
     {
-      id: "3",
-      label: "Orders",
-      link: "/orders",
+      id: '3',
+      label: 'Orders',
+      link: '/orders',
       isParent: false,
       isDisabled: false,
       checked: false,
       indeterminate: false,
-      icon: <LocalShippingIcon/>,
-      children: []
+      icon: <LocalShippingIcon />,
+      children: [],
     },
     {
-      id: "4",
-      label: "Users",
-      link: "/users",
+      id: '4',
+      label: 'Users',
+      link: '/users',
       isParent: false,
       isDisabled: false,
       checked: false,
       indeterminate: false,
-      icon: <PersonIcon/>,
-      children: []
+      icon: <PersonIcon />,
+      children: [],
     },
-  
-     
-   
   ];
   return (
     <>
-      <SideBar sidebarItems={sidebarItems} />
+      <SideBar children={<AutoCompleteComponent onSubmit={handleFilterSubmit} />} />
       <Box
         className={'content'}
         bgcolor={'background.paper'}
@@ -100,7 +113,7 @@ const Content = () => {
         width={'100%'}
       >
         <TopBar title={'Dashboard'} />
-        <Outlet />
+        <Dashboard filters={filters}/>
       </Box>
     </>
   );
