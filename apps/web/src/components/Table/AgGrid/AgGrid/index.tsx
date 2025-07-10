@@ -31,7 +31,7 @@ export default function AgGridTable({
     indexOfLastItem,
     handleItemsPerPageChange,
     setCurrentPage,
-    setItemsPerPage
+    setItemsPerPage,
   } = usePagination(list);
 
   const components = {
@@ -71,6 +71,11 @@ export default function AgGridTable({
         // pagination={pagination}
         // paginationPageSize={paginationPageSize}
         // paginationAutoPageSize={true}
+        rowBuffer={10}
+        suppressRowVirtualisation={false}
+        suppressColumnVirtualisation={false}
+        cacheQuickFilter={true}
+        rowHeight={40}
         columnDefs={columnDefs}
         rowData={currentItems}
         onCellClicked={() => {}}
@@ -83,7 +88,7 @@ export default function AgGridTable({
         {...gridOptions}
       />
 
-      <PaginationComponent
+      {/* <PaginationComponent
         totalItems={list.length}
         itemsPerPage={itemsPerPage}
         currentPage={currentPage}
@@ -92,7 +97,7 @@ export default function AgGridTable({
         indexOfFirstItem={indexOfFirstItem}
         indexOfLastItem={indexOfLastItem}
         setItemsPerPage={setItemsPerPage}
-      />
+      /> */}
     </Box>
   );
 }

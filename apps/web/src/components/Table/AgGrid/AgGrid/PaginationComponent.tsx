@@ -45,7 +45,7 @@ const PaginationComponent: React.FC<PaginationProps> = ({
   };
 
   const theme = useThemeMode();
-  console.log(theme);
+  // console.log(theme);
 
   return (
     <Box

@@ -3,7 +3,6 @@ import { Box, TextField, Autocomplete, Button } from '@mui/material';
 import { MButton, MMultiselect } from '@jp/material-core-master';
 import departmentData from '../../../data/multi-select-data.json';
 
-
 interface AutoCompleteProps {
   onSubmit: (filters: {
     departmentId: string | null;
@@ -71,7 +70,6 @@ const AutoCompleteComponent = ({ onSubmit }: AutoCompleteProps) => {
   return (
     <Box display="flex" flexDirection="column" gap={2}>
       <MMultiselect
-      
         label="Department"
         labelPlacement="top"
         placeholder={'Select Department'}
@@ -127,7 +125,7 @@ const AutoCompleteComponent = ({ onSubmit }: AutoCompleteProps) => {
             setSelectedDepartmentId(null);
             setSelectedTeamLeadId(null);
             setSelectedProjectId(null);
-            
+
             setMultiSelectOptions((prevOptions) =>
               prevOptions.map((opt) => ({
                 ...opt,
@@ -135,7 +133,6 @@ const AutoCompleteComponent = ({ onSubmit }: AutoCompleteProps) => {
               }))
             );
           }}
-
         />
       </Box>
     </Box>
