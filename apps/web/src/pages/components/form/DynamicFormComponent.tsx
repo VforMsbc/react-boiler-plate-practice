@@ -1,6 +1,6 @@
 import { Box, Button, Input, Typography } from '@mui/material';
 import React, { useState } from 'react';
-import Fields from './Fields';
+import Fields, { FieldsProps } from './Fields';
 //data that must be passed
 const formFieldsData = [
   {
@@ -44,18 +44,18 @@ const formFieldsData = [
   },
 ];
 
-interface InputProps {
-  type?: string;
-  label?: string;
-  placeholder?: string;
-  name?: string;
-  required?: boolean;
-  value?: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
+// interface InputProps {
+//   type?: string;
+//   label?: string;
+//   placeholder?: string;
+//   name?: string;
+//   required?: boolean;
+//   value?: string;
+//   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+// }
 interface FormComponentProps {
   formTitle?: string;
-  inputFields?: InputProps[];
+  inputFields?: FieldsProps[];
   onsubmit?: (formData: Record<string, any>) => void;
 }
 
@@ -96,6 +96,7 @@ const DynamicFormComponent = ({
         {inputFields?.map((field, index) => (
           <Box key={index} sx={{ marginBottom: 4 }}>
             <Fields
+              id={field.id}
               label={field.label}
               key={index}
               type={field.type}
