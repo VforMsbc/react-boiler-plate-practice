@@ -3,9 +3,10 @@ import { Check } from '@mui/icons-material';
 import {
   Autocomplete,
   Box,
-  Checkbox,
+  
   Input,
   Radio,
+  TextField,
   Typography,
 } from '@mui/material';
 import React from 'react';
@@ -24,14 +25,23 @@ export interface FieldsProps {
     | 'radio';
   label: string;
   id: string;
-  checked: boolean;
+  checked?: boolean;
   placeholder?: string;
-  value: string | number;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  value: string | number | boolean;
+  onChange: (
+    e:
+      | React.ChangeEvent<HTMLInputElement>
+      | { target: { name: string; value: any } }
+  ) => void;
   required?: boolean;
   disabled?: boolean;
   options?: Array<{ label: string; value: string; checked: boolean }>;
 }
+export type FieldsConfig =Omit<
+  FieldsProps,
+  'value' | 'onChange' | 'checked'
+>
+
 
 const Fields = (props: FieldsProps) => {
   if (
@@ -48,7 +58,7 @@ const Fields = (props: FieldsProps) => {
           name={props.name}
           type={props.type}
           id={props.id}
-          placeholder={props.placeholder}
+          placeholder={props.placeholder ? props.placeholder : ''}
           value={props.value}
           onChange={props.onChange}
           required={props.required}
@@ -82,7 +92,14 @@ const Fields = (props: FieldsProps) => {
         label={props.label!}
         className={props.name}
         checked={props.checked}
-        onChange={props.onChange}
+        onChange={(e) =>
+        props.onChange({
+          target: {
+            name: props.name,
+            value: e.target.checked,
+          },
+        })
+      }
       />
     );
   }
@@ -93,8 +110,8 @@ const Fields = (props: FieldsProps) => {
         <Typography variant="body1">{props.label}</Typography>
         <Autocomplete
           options={props.options!}
-          getOptionLabel={(option) => option.label}
-          onChange={(event, newValue) => {
+          getOptionLabel={(option: any) => option.label}
+          onChange={(event: any, newValue: any) => {
             props.onChange({
               target: {
                 name: props.name,
@@ -103,7 +120,7 @@ const Fields = (props: FieldsProps) => {
             });
           }}
           renderInput={(params) => (
-            <Input {...params} placeholder={props.placeholder} />
+            <TextField {...params} placeholder={props.placeholder} />
           )}
         />
       </Box>
@@ -116,18 +133,16 @@ const Fields = (props: FieldsProps) => {
         <Typography variant="body1">{props.label}</Typography>
         <MMultiselect
           options={props.options!}
-          getOptionLabel={(option) => option.label}
-          onChange={(event, newValue) => {
+          // getOptionLabel={(option: any) => option.label}
+          onChange={(selectedOptions) => {
             props.onChange({
               target: {
                 name: props.name,
-                value: newValue,
+                value: selectedOptions,
               },
             });
           }}
-          renderInput={(params) => (
-            <Input {...params} placeholder={props.placeholder} />
-          )}
+         
         />
       </Box>
     );

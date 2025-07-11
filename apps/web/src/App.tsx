@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import { AppTheme } from '@app/lib/shared-components';
 import 'react-toastify/dist/ReactToastify.css';
 import DynamicFormComponent from './pages/components/form/DynamicFormComponent';
+import '@jp/material-core-master/dist/index.css'
 
 const App = () => {
   return (

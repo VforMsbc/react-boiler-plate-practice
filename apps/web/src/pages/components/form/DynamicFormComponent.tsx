@@ -1,6 +1,6 @@
 import { Box, Button, Input, Typography } from '@mui/material';
 import React, { useState } from 'react';
-import Fields, { FieldsProps } from './Fields';
+import Fields, { FieldsConfig, FieldsProps } from './Fields';
 //data that must be passed
 const formFieldsData = [
   {
@@ -55,7 +55,7 @@ const formFieldsData = [
 // }
 interface FormComponentProps {
   formTitle?: string;
-  inputFields?: FieldsProps[];
+  inputFields?: FieldsConfig[];
   onsubmit?: (formData: Record<string, any>) => void;
 }
 
@@ -67,9 +67,21 @@ const DynamicFormComponent = ({
   const [formData, setFormData] = useState<Record<string, any>>({});
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    e:
+      | React.ChangeEvent<HTMLInputElement>
+      | { target: { name: string; value: any } }
   ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const target = e.target;
+    const name = target.name;
+    const value =
+      (target as HTMLInputElement).type === 'checkbox'
+        ? (target as HTMLInputElement).checked
+        : target.value;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -96,20 +108,12 @@ const DynamicFormComponent = ({
         {inputFields?.map((field, index) => (
           <Box key={index} sx={{ marginBottom: 4 }}>
             <Fields
-              id={field.id}
-              label={field.label}
-              key={index}
-              type={field.type}
-              placeholder={field.placeholder}
-              name={field.name}
-              required={field.required}
+              {...field}
               onChange={handleChange}
               value={formData[field.name || ''] || ''}
-
+              checked={!!formData[field.name]}
               //   options={field.options}
             />
-
-            
           </Box>
         ))}
         <Button variant="contained" color="primary" type="submit">
