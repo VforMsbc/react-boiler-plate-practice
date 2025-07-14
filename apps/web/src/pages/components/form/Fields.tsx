@@ -3,7 +3,6 @@ import { Check } from '@mui/icons-material';
 import {
   Autocomplete,
   Box,
-  
   Input,
   Radio,
   TextField,
@@ -37,11 +36,7 @@ export interface FieldsProps {
   disabled?: boolean;
   options?: Array<{ label: string; value: string; checked: boolean }>;
 }
-export type FieldsConfig =Omit<
-  FieldsProps,
-  'value' | 'onChange' | 'checked'
->
-
+export type FieldsConfig = Omit<FieldsProps, 'value' | 'onChange' | 'checked'>;
 
 const Fields = (props: FieldsProps) => {
   if (
@@ -93,13 +88,13 @@ const Fields = (props: FieldsProps) => {
         className={props.name}
         checked={props.checked}
         onChange={(e) =>
-        props.onChange({
-          target: {
-            name: props.name,
-            value: e.target.checked,
-          },
-        })
-      }
+          props.onChange({
+            target: {
+              name: props.name,
+              value: e.target.checked,
+            },
+          })
+        }
       />
     );
   }
@@ -142,7 +137,6 @@ const Fields = (props: FieldsProps) => {
               },
             });
           }}
-         
         />
       </Box>
     );
