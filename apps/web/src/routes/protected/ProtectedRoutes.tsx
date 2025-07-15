@@ -11,12 +11,12 @@ const ProtectedRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<ProtectedWrapper />}>
-        {/* <Route path="user_profile" element={<UserProfile />} />
+        <Route path="user_profile" element={<UserProfile />} />
         <Route path="*" element={<InDevelopment />} />
         <Route path="/home" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/orders" element={<Orders />} />
-        <Route path="/users" element={<User />} /> */}
+        <Route path="/users" element={<User />} />
       </Route>
     </Routes>
   );

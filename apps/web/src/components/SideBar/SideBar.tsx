@@ -24,7 +24,7 @@ export const SideBar = ({ sidebarItems, children }: Props) => {
 
   const displayedMenu = useCallback(
     (items: ISidebarData[]) => {
-      return items.map((item) => (
+      return items?.map((item) => (
         <MenuItem
           key={item.id}
           icon={item.icon}
@@ -62,8 +62,10 @@ export const SideBar = ({ sidebarItems, children }: Props) => {
             </Box>
           </Box>
           <Box className="sidebarMenuContainer">
-            {/* <Menu>{displayedMenu(sidebarItems)}</Menu> */}
-            {children}
+            {children ? <>{children}</> :
+            <Menu>{displayedMenu(sidebarItems || [])}</Menu>
+            }
+            {/* {children} */}
           </Box>
         </Sidebar>
       </Box>

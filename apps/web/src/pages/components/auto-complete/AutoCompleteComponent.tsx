@@ -4,7 +4,7 @@ import React from 'react'
 const AutoCompleteComponent = () => {
   return (
     <Box>
-      <Autocomplete />
+      {/* <Autocomplete /> */}
     </Box>
   )
 }
