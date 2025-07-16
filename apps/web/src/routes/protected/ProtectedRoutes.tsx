@@ -6,6 +6,7 @@ import Home from '../../pages/Home/Home';
 import Orders from '../../pages/Orders/Orders';
 import Products from '../../pages/Products/Products';
 import User from '../../pages/Users/User';
+import Post from '../../pages/Post/Post';
 
 const ProtectedRoutes = () => {
   return (
@@ -17,6 +18,7 @@ const ProtectedRoutes = () => {
         <Route path="/products" element={<Products />} />
         <Route path="/orders" element={<Orders />} />
         <Route path="/users" element={<User />} />
+        <Route path="/post" element={<Post />} />
       </Route>
     </Routes>
   );

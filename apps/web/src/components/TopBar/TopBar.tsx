@@ -11,7 +11,6 @@ import { MButton } from '@jp/material-core-master';
 import { MSwitch } from '@jp/material-core-master';
 import { ThemeModeContext } from '@app/lib/shared-components';
 const TopBar = ({ title }: { title: string }) => {
-  // const [title] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const { themeMode, toggleTheme } = useContext(ThemeModeContext);
   const theme = createTheme({

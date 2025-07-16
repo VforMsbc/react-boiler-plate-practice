@@ -59,7 +59,7 @@ const LineChart: React.FC<LineChartWProps> = ({
           // fill: true,
           borderColor: '#467FD8',
           pointBorderColor: '#AAA',
-          pointBackgroundColor: '#FEF1F1',
+          pointBackgroundColor: '#f2f3f2',
           backgroundColor: (context: ScriptableContext<'line'>) => {
             const ctx = context.chart.ctx;
             const gradient = ctx.createLinearGradient(0, 25, 0, 300);
@@ -95,7 +95,7 @@ const LineChart: React.FC<LineChartWProps> = ({
             },
           },
           grid: {
-            color: '#F1F4F9',
+            color: 'yellow',
             borderWidth: 2,
             border: {
               dash: [1, 4],
@@ -123,7 +123,7 @@ const LineChart: React.FC<LineChartWProps> = ({
           TitleFont: {
             weight: 'bold',
           },
-          backgroundColor: 'rgba(255,255,255, 0.9)',
+          backgroundColor: 'rgba(219, 233, 97, 0.9)',
           padding: 15,
           width: 30,
           callbacks: {

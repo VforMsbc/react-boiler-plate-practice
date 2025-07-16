@@ -2,11 +2,13 @@ import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import authReducer from './reducers/auth/authSlice';
 import userManagementReducer from './reducers/userManagement/userManagementSlice';
+import postManagement from './reducers/postManagement/postManagementSlice'
 
 export const store = configureStore({
   reducer: {
     auth: authReducer,
     usermanagement: userManagementReducer,
+    post: postManagement
   },
 });
 

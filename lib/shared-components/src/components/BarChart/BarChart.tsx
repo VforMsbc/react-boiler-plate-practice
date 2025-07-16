@@ -43,11 +43,11 @@ const BarChart = ({
       {
         label: '',
         data: listData.map((it) => it.data_value),
-        backgroundColor: '#467FD8',
-        borderRadius: 0,
-        maxBarThickness: 15,
-        tension: 0.2,
-        borderColor: 'blue',
+        backgroundColor: 'yellow',
+        borderRadius: 10,
+        maxBarThickness: 45,
+        tension: 0.1,
+        borderColor: 'gray',
         fill: true,
       },
     ],
@@ -59,15 +59,16 @@ const BarChart = ({
       scales: {
         x: {
           grid: {
-            drawOnChartArea: false,
-            drawBorder: false,
+            drawOnChartArea:false,
+            drawBorder: true,
+            color:"white"
           },
         },
         y: {
           grace: '15%',
           grid: {
             color: '#d3d3d3',
-            borderWidth: 2,
+            borderWidth: 4,
           },
           border: {
             dash: [1, 4],
@@ -94,10 +95,10 @@ const BarChart = ({
         },
         datalabels: {
           font: {
-            size: 10,
+            size: 12,
           },
           display: true,
-          color: 'black',
+          color: 'white',
           align: (context: {
             dataset: { data: { [x: string]: number } };
             dataIndex: string | number;
@@ -165,7 +166,7 @@ const BarChart = ({
           TitleFont: {
             weight: 'bold',
           },
-          backgroundColor: 'rgba(255,255,255, 0.9)',
+          backgroundColor: 'rgba(202, 189, 189, 0.9)',
           padding: 15,
           width: 30,
           callbacks: {

@@ -9,6 +9,7 @@ import CategoryIcon from '@mui/icons-material/Category';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import PersonIcon from '@mui/icons-material/Person';
 import HomeIcon from '@mui/icons-material/Home';
+import AddBoxIcon from '@mui/icons-material/AddBox';
 import AutoCompleteComponent from '../../../pages/components/auto-complete/AutoCompleteComponent';
 import Home from '../../../pages/Home/Home';
 
@@ -90,6 +91,18 @@ const Content = () => {
       icon: <PersonIcon />,
       children: [],
     },
+    {
+      id: '5',
+      label: 'Posts',
+      link: '/post',
+      isParent: false,
+      isDisabled: false,
+      checked: false,
+      indeterminate: false,
+      icon: <AddBoxIcon />,
+      children: [],
+    },
+
   ];
   const activeItem = sidebarItems.find((item) =>
     location.pathname.startsWith(item.link!)

@@ -6,7 +6,7 @@ const topBar: SxProps = {
   justifyContent: 'space-between',
   alignItems: 'center',
   position: 'sticky',
-  bgcolor: '#FFF',
+  // bgcolor: '#FFF',
   boxShadow:
     '0px 1px 2px 0px rgba(21, 30, 40, 0.08), 0px 2px 4px 0px rgba(13, 23, 33, 0.08)',
   p: 2,

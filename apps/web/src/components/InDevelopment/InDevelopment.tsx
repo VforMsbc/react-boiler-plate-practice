@@ -7,9 +7,10 @@ const InDevelopment = () => {
       alignItems={'center'}
       justifyContent={'center'}
       width={'100%'}
+      height={'100%'}
       mt={2}
     >
-      <Typography variant="h4" color={'black'}>
+      <Typography variant="h2" fontWeight={'400'} >
         In Development
       </Typography>
     </Box>
