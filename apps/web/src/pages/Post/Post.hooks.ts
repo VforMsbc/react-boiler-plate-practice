@@ -10,6 +10,8 @@ export interface IPostErrorSchema {
 }
 
 export interface IPostSchema {
+    // isLoading?: boolean;
+    postId: string,
     title: string;
     content: string;
 }
@@ -45,6 +47,7 @@ const usePost = () => {
 
 
     const [postDetails, setPostDetails] = useState<IPostSchema>({
+        postId: '',
         title: '',
         content: ''
     })
@@ -67,6 +70,7 @@ const usePost = () => {
         if (hasError.isValid) {
             try {
                 const payload: IPostSchema = {
+                    postId: postDetails.postId,
                     title: postDetails.title,
                     content: postDetails.content,
                 };
@@ -76,6 +80,7 @@ const usePost = () => {
                 const data: IPostData[] = res.data;
                 console.log(data)
                 setPostDetails({
+                    postId:'',
                     title: '',
                     content: ''
                 });
@@ -90,6 +95,7 @@ const usePost = () => {
 
     return {
         variable: {
+            isLoading,
             postDetails,
             postErrorDetails
         },

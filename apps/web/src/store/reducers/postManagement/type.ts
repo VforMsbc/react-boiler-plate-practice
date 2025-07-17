@@ -5,6 +5,7 @@ export interface IPostSlice{
 }
 
 export interface IPostData {
+    postId:string,
     title: string;
     content: string;
 }

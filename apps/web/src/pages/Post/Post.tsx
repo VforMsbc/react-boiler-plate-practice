@@ -5,7 +5,7 @@ import { AppTextField } from '@app/lib/shared-components';
 
 const Post = () => {
   const {
-    variable: { postDetails, postErrorDetails },
+    variable: {isLoading, postDetails, postErrorDetails },
     methods: { handleInputChange, handleSubmit },
   } = usePost();
   return (
@@ -16,6 +16,8 @@ const Post = () => {
         <Box>
           <AppTextField
             name="title"
+            label='Title'
+            variant='outlined'
             sx={{ width: 100 }}
             placeholder="Write post title here"
             value={postDetails.title}
@@ -26,15 +28,17 @@ const Post = () => {
         <Box>
           <TextareaAutosize
             name="content"
+            
             style={{ width: 500 }}
             minRows={20}
             value={postDetails.content}
             onChange={handleInputChange}
+            placeholder='Write post content here'
           />
         </Box>
 
         <MButton
-          label="Submit"
+          label={isLoading ? 'Loading...' : 'Create Post'}
           type="submit"
           variant="contained"
           color="primary"
