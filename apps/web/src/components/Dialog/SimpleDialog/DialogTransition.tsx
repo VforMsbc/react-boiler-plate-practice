@@ -8,5 +8,5 @@ export const DialogTransition = forwardRef(function Transition(
   },
   ref: Ref<unknown>
 ) {
-  return <Slide direction="up" ref={ref} {...props} />;
+  return <Slide in={true} direction="down" ref={ref} {...props} />;
 });

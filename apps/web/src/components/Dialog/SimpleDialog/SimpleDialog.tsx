@@ -1,7 +1,7 @@
 import { Dialog, DialogContent, DialogTitle, Paper } from '@mui/material';
 import { DialogTransition } from './DialogTransition';
 import { SimpleDialogProps } from './SimpleDialog.types';
-
+import CloseIcon from '@mui/icons-material/Close';
 const SimpleDialog = ({
   open,
   handleClose,
@@ -47,6 +47,7 @@ const SimpleDialog = ({
           color={'primary'}
         >
           {title ?? ''}
+          <CloseIcon sx={{ cursor: 'pointer' }} onClick={handleClose} />
         </DialogTitle>
       )}
 

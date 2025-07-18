@@ -85,6 +85,8 @@ const useLogin = () => {
           password: loginDetails.password,
         };
         const promise = dispatch(loginUser(payload));
+        // const res = await loginUser.fulfilled.match(promise)
+        // const data=await promise.payload
         const res = await promise.unwrap();
         const data: ILocalAuth = {
           ...res.data,

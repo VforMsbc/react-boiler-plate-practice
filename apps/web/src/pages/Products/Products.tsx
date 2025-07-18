@@ -1,5 +1,6 @@
 import React from 'react';
 import AgPieChart from '../components/ag-charts/AgPieChart';
+import { Box } from '@mui/material';
 const PRODUCTS_PIE_DATA = [
   {
     name: 'TV',
@@ -21,7 +22,7 @@ const PRODUCTS_PIE_DATA = [
 
 const Products = () => {
   return (
-    <div>
+    <Box >
       <AgPieChart
         height={500}
         data={PRODUCTS_PIE_DATA}
@@ -31,7 +32,8 @@ const Products = () => {
         sectorLabelKey={'sales'}
         legendItemKey={'name'}
       />
-    </div>
+      {/* <h1>sdfsdrsfrf</h1> */}
+    </Box>
   );
 };
 

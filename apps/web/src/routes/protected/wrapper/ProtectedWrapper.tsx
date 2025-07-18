@@ -10,9 +10,7 @@ import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import PersonIcon from '@mui/icons-material/Person';
 import HomeIcon from '@mui/icons-material/Home';
 import AddBoxIcon from '@mui/icons-material/AddBox';
-import AutoCompleteComponent from '../../../pages/components/auto-complete/AutoCompleteComponent';
-import Home from '../../../pages/Home/Home';
-
+import TextSnippetIcon from '@mui/icons-material/TextSnippet';
 const ProtectedWrapper = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(true); // make default false
@@ -94,7 +92,7 @@ const Content = () => {
     {
       id: '5',
       label: 'Posts',
-      link: '/post',
+      link: '/posts',
       isParent: false,
       isDisabled: false,
       checked: false,
@@ -102,11 +100,20 @@ const Content = () => {
       icon: <AddBoxIcon />,
       children: [],
     },
-
+    {
+      id: '6',
+      label: 'Form',
+      link: '/forms',
+      isParent: false,
+      isDisabled: false,
+      checked: false,
+      indeterminate: false,
+      icon: <TextSnippetIcon />,
+      children: [],
+    },
   ];
-  const activeItem = sidebarItems.find((item) =>
-    location.pathname.startsWith(item.link!)
-  );
+
+ 
   return (
     <>
       <SideBar sidebarItems={sidebarItems} />
@@ -117,8 +124,9 @@ const Content = () => {
         flexDirection={'column'}
         width={'100%'}
       >
-        <TopBar title={activeItem?.label || ''} />
+        <TopBar title={'Dashboard'} />
         <Outlet />
+        
       </Box>
     </>
   );

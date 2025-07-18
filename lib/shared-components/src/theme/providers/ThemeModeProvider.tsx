@@ -12,20 +12,22 @@ export type ThemeModeContextType = {
 export interface ThemeModeProviderProps {
   children?: React.ReactNode;
 }
-const theme = createTheme({
-  palette: {
-    mode: 'dark',
-  },
-});
+
 export const ThemeModeContext = createContext<ThemeModeContextType>({
   themeMode: 'dark',
   toggleTheme: () => {},
-  setThemeMode: (mode: ThemeMode) => {!mode},
+  setThemeMode: (mode: ThemeMode) => {
+    !mode;
+  },
 });
 
 const ThemeModeProvider: FC<ThemeModeProviderProps> = ({ children }) => {
   const [themeMode, toggleTheme, setThemeMode] = useThemeMode();
-
+  // const theme = createTheme({
+  //   palette: {
+  //     mode: themeMode,
+  //   },
+  // });
   return (
     <ThemeModeContext.Provider value={{ themeMode, toggleTheme, setThemeMode }}>
       {children}

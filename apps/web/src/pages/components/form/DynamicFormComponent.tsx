@@ -1,7 +1,7 @@
 import { Box, Button, Input, Typography } from '@mui/material';
 import React, { useState } from 'react';
-import Fields from './Fields';
-
+import Fields, { FieldsConfig, FieldsProps } from './Fields';
+//data that must be passed
 const formFieldsData = [
   {
     type: 'text',
@@ -42,22 +42,21 @@ const formFieldsData = [
     name: 'rememberMe',
     required: false,
   },
-  
 ];
 
-interface InputProps {
-  type?: string;
-  label?: string;
-  placeholder?: string;
-  name?: string;
-  required?: boolean;
-  value?: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
+// interface InputProps {
+//   type?: string;
+//   label?: string;
+//   placeholder?: string;
+//   name?: string;
+//   required?: boolean;
+//   value?: string;
+//   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+// }
 interface FormComponentProps {
-  formTitle?: string;
-  inputFields?:  typeof formFieldsData;
-  onsubmit?: (e: React.FormEvent<HTMLFormElement>) => void;
+  formTitle: string;
+  inputFields: FieldsConfig[];
+  onsubmit: (formData: Record<string, any>) => void;
 }
 
 const DynamicFormComponent = ({
@@ -65,35 +64,61 @@ const DynamicFormComponent = ({
   inputFields,
   onsubmit,
 }: FormComponentProps) => {
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState<Record<string, any>>({});
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    e:
+      | React.ChangeEvent<HTMLInputElement>
+      | { target: { name: string; value: any } }
   ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const target = e.target;
+    const name = target.name;
+    const value =
+      (target as HTMLInputElement).type === 'checkbox'
+        ? (target as HTMLInputElement).checked
+        : target.value;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    onsubmit?.(e);
+    onsubmit?.(formData);
   };
   return (
-    <Box sx={{ padding: 2, maxWidth: 600, margin: 'auto', border: '1px solid #ccc', borderRadius: '8px' }}>
-      <Typography>{formTitle}</Typography>
+    <Box
+      sx={{
+        padding: 2,
+        maxWidth: 600,
+        margin: 'auto',
+        border: '1px solid #ccc',
+        borderRadius: '8px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      }}
+    >
+      <Typography sx={{ fontSize: '1.5rem' }} gutterBottom>
+        {formTitle}
+      </Typography>
       <form onSubmit={handleSubmit}>
-        {formFieldsData?.map((field, index) => (
-          <Box key={index} sx={{ marginBottom: 2 }}>
+        {inputFields?.map((field, index) => (
+          <Box key={index} sx={{ marginBottom: 4 }}>
             <Fields
-              key={index}
-              type={field.type}
-              placeholder={field.placeholder}
-              name={field.name}
-              required={field.required}
-            //   options={field.options}
+              {...field}
+              onChange={handleChange}
+              value={formData[field.name || ''] || ''}
+              checked={!!formData[field.name]}
+              //   options={field.options}
             />
           </Box>
         ))}
-        <Button type="submit">Submit</Button>
+        <Button variant="contained" color="primary" type="submit">
+          Submit
+        </Button>
       </form>
     </Box>
   );

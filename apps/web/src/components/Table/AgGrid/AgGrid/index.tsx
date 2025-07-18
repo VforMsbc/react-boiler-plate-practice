@@ -1,16 +1,16 @@
 import { Box, IconButton } from '@mui/material';
-import 'ag-grid-community/styles/ag-grid.css';
-import 'ag-grid-community/styles/ag-theme-alpine.css';
-// import '@/assets/scss/agGrid.scss';
 import { IParms, Props } from './type';
 import { usePagination } from './Pagination.hooks';
 import { gridIcons } from './style';
 import { TickIcon, EditIcon } from '../../../../assets/Svg/index';
 // import { InlineLoader } from 'apps/web/src/util/loader';
-// import PaginationComponent from '../../../Pagination';
+// import PaginationComponent from './';
 import { MGrid } from '@jp/material-core-master';
 import gridheadCells from './util';
 import useAgGrid from './AgGrid.hooks';
+import { ThemeModeContext } from '@app/lib/shared-components';
+import { useContext } from 'react';
+import 'ag-grid-community/styles/ag-grid.css'
 
 export default function AgGridTable({
   list,
@@ -60,13 +60,16 @@ export default function AgGridTable({
     overlayLoading: isLoading,
     overlayNoRowsTemplate: isLoading ? `Loading` : 'No Data Found',
   };
-
+  const {themeMode} = useContext(ThemeModeContext);
   return (
-    <Box className="ag-theme-alpine" width={'100%'} height={'100%'}>
+    <Box 
+    className={themeMode === 'light' ? 'ag-theme-balham' : 'ag-theme-balham-dark'} width={'100%'} height={'100%'}
+    
+    >
       <MGrid
+        
         pagination={pagination}
         paginationPageSize={paginationPageSize}
-      
         columnDefs={gridheadCells}
         rowData={currentItems}
         onCellClicked={() => {}}

@@ -20,6 +20,7 @@ const Home = () => {
         {/* <Typography sx={{ fontSize: '24px', fontWeight: 'bold' }}>Home</Typography> */}
 
         <BarChart
+       
           title="Sales Bar Chart"
           listData={barChartList}
           isShowHistoricData={false}
