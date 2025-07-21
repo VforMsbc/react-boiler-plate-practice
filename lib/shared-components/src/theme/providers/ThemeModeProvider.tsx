@@ -1,7 +1,6 @@
 import { FC, createContext } from 'react';
 import { ThemeMode } from '../types/ThemeMode';
 import { useThemeMode } from '../hooks/useThemeMode';
-import { createTheme } from '@mui/material';
 
 export type ThemeModeContextType = {
   themeMode: ThemeMode;

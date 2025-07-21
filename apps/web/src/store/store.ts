@@ -7,7 +7,7 @@ import postManagement from './reducers/postManagement/postManagementSlice'
 export const store = configureStore({
   reducer: {
     auth: authReducer,
-    usermanagement: userManagementReducer,
+    userManagement: userManagementReducer,
     post: postManagement
   },
 });

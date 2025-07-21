@@ -1,7 +1,7 @@
 import { Box, Button, Input, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import Fields, { FieldsConfig, FieldsProps } from './Fields';
-//data that must be passed
+//data that must be passed of the given format
 const formFieldsData = [
   {
     type: 'text',
@@ -92,7 +92,7 @@ const DynamicFormComponent = ({
     <Box
       sx={{
         padding: 2,
-        maxWidth: 600,
+        // width: '50%',
         margin: 'auto',
         border: '1px solid #ccc',
         borderRadius: '8px',

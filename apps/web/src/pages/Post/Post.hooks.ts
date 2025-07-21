@@ -1,6 +1,6 @@
 import { ChangeEvent, FormEvent, useState } from "react"
 import { useAppDispatch, useAppSelector } from "../../store/store";
-import { createPost } from "../../store/reducers/postManagement/service";
+import { createPost, getPostById } from "../../store/reducers/postManagement/service";
 import { IPostData } from "../../store/reducers/postManagement/type";
 import { toast } from "react-toastify";
 
@@ -80,7 +80,7 @@ const usePost = () => {
                 const data: IPostData[] = res.data;
                 console.log(data)
                 setPostDetails({
-                    postId:'',
+                    postId: '',
                     title: '',
                     content: ''
                 });
@@ -93,6 +93,21 @@ const usePost = () => {
         }
     }
 
+    const getPostbyIdHandler = async (postId: string) => {
+        try {
+            // const payload: IPostSchema = {
+            //     postId: postDetails.postId,
+            // };
+
+            // const promise = dispatch(getPostById({ postId: "123" }));
+            // const res = await promise.unwrap();
+            // const data: IPostData[] = res.data;
+            // console.log(data)
+        }
+        catch {
+
+        }
+    }
     return {
         variable: {
             isLoading,

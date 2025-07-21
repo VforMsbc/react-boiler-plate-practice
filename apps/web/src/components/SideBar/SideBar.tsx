@@ -1,14 +1,15 @@
 import { Box, Typography } from '@mui/material';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useContext, useState } from 'react';
 import { Menu, MenuItem, Sidebar } from 'react-pro-sidebar';
 import { useNavigate } from 'react-router-dom';
 import '../../assets/scss/sidebar.scss';
 import { SeparateIcon } from '../../assets/Svg/sidebarAssets/icons';
 import { ISidebarData } from './sidebar.types';
+import { ThemeModeContext } from '@app/lib/shared-components';
 
 interface Props {
   sidebarItems?: ISidebarData[];
-  children?: React.ReactNode;
+  children?: React.ReactNode;//extended this children property so that we can implement auto-complete 
 }
 
 export const SideBar = ({ sidebarItems, children }: Props) => {
@@ -21,6 +22,7 @@ export const SideBar = ({ sidebarItems, children }: Props) => {
     e.stopPropagation();
     if (menuItem?.link) navigate(menuItem?.link);
   };
+  const { themeMode } = useContext(ThemeModeContext);
 
   const displayedMenu = useCallback(
     (items: ISidebarData[]) => {
@@ -43,8 +45,9 @@ export const SideBar = ({ sidebarItems, children }: Props) => {
   return (
     <>
       <Box
+        
         id="collapsed-icon"
-        className={isCollapsed ? 'toggleBtnCollapsed' : 'toggleBtnExpand'}
+        className={`theme=${themeMode} ${isCollapsed ? 'toggleBtnCollapsed' : 'toggleBtnExpand'}`}
         onClick={() => setIsCollapsed(!isCollapsed)}
       >
         <SeparateIcon />

@@ -4,6 +4,7 @@ import {
   createTheme,
   IconButton,
   Typography,
+  useTheme,
 } from '@mui/material';
 import * as style from './style';
 import { useContext, useEffect, useState } from 'react';
@@ -13,23 +14,21 @@ import { ThemeModeContext, useThemeMode } from '@app/lib/shared-components';
 import { SimpleDialog } from '../Dialog';
 import DynamicFormComponent from '../../pages/components/form/DynamicFormComponent';
 
+
+//implemented styling for dark mode light mode toggle
+//implemented dialog box component
+
 const TopBar = ({ title }: { title: string }) => {
   const [isLoggedIn] = useState(false);
-  const {themeMode, toggleTheme } = useContext(ThemeModeContext);
+  const {themeMode, toggleTheme} = useContext(ThemeModeContext);
 
   const [openDialog, setOpenDialog] = useState(false);
   const [loginPage, setLoginPage] = useState(false);
 
-  // const theme = createTheme({
-  //   palette: {
-  //     mode: themeMode === 'dark' ? 'dark' : 'light',
-  //   },
-  // });
-
   const handleDialogOpen = () => setOpenDialog(true);
   const handleDialogClose = () => setOpenDialog(false);
-  
-  const handleAuthSubmit=()=>{
+
+  const handleAuthSubmit = () => {
 
   }
   return (
@@ -104,9 +103,9 @@ const TopBar = ({ title }: { title: string }) => {
                 <Typography
                   sx={{ display: 'flex', justifyContent: 'center' }}
                   variant="h6"
-                  color="text.secondary"
+                  color="text.primary"
                 >
-                  Don't have an account? <a href="/auth/register">Sign up</a>
+                  Don't have an account ? <a href="/auth/register">Sign up</a>
                 </Typography>
               </Box>
             </>

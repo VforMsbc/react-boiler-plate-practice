@@ -4,6 +4,7 @@ interface Props {
   list: IUserDetails[];
   isLoading?: boolean;
   handleOpenDialog: (row: IUserDetails) => void;
+  columnDefs: any[];
 }
 
 interface IParms {

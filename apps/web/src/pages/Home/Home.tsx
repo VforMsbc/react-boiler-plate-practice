@@ -15,12 +15,20 @@ const Home = () => {
   const [lineChartList] =
     useState<{ date: string; value: number }[]>(LINE_CHART_DATA);
   return (
-    <Box>
-      <Box sx={{ display: 'flex' }}>
+    <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        // justifyContent: 'center',  
+        flexDirection: 'column',
+        bgcolor: '',
+        // minHeight: '92vh',
+      }}
+    >
+      <Box sx={{ width: '800px', display: 'flex' }}>
         {/* <Typography sx={{ fontSize: '24px', fontWeight: 'bold' }}>Home</Typography> */}
 
         <BarChart
-       
           title="Sales Bar Chart"
           listData={barChartList}
           isShowHistoricData={false}
@@ -28,7 +36,7 @@ const Home = () => {
           hImpliesMultiple={undefined}
         />
       </Box>
-      <Box>
+      <Box sx={{ width: '800px' }}>
         <LineChartW
           isLoading={false}
           listData={lineChartList}

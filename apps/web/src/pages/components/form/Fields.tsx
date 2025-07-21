@@ -49,7 +49,9 @@ const Fields = (props: FieldsProps) => {
     return (
       <Box>
         <Typography variant="body1">{props.label}</Typography>
-        <Input
+        <TextField
+          variant="outlined"
+          sx={{ width: '500px' }}
           name={props.name}
           type={props.type}
           id={props.id}

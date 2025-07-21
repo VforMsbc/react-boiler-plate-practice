@@ -9,7 +9,7 @@ const initialState: IUserManagementSliceInitialState = {
 };
 
 export const userManagementSlice = createSlice({
-  name: 'usermanagement',
+  name: 'userManagement',
   initialState,
   reducers: {},
   extraReducers: (builder) => {

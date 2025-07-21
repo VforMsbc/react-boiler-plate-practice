@@ -4,7 +4,7 @@ import { usePagination } from './Pagination.hooks';
 import { gridIcons } from './style';
 import { TickIcon, EditIcon } from '../../../../assets/Svg/index';
 // import { InlineLoader } from 'apps/web/src/util/loader';
-// import PaginationComponent from './';
+import PaginationComponent from './PaginationComponent'
 import { MGrid } from '@jp/material-core-master';
 import gridheadCells from './util';
 import useAgGrid from './AgGrid.hooks';
@@ -16,10 +16,12 @@ export default function AgGridTable({
   list,
   isLoading,
   handleOpenDialog,
+  columnDefs,
 }: Props) {
   const { defaultColDef, getRowHeight } = useAgGrid();
   const pagination = true;
   const paginationPageSize = 10;
+
   const {
     currentItems,
     itemsPerPage,
@@ -28,6 +30,7 @@ export default function AgGridTable({
     indexOfLastItem,
     handleItemsPerPageChange,
     setCurrentPage,
+    setItemsPerPage,
   } = usePagination(list);
 
   const components = {
@@ -68,8 +71,8 @@ export default function AgGridTable({
     >
       <MGrid
         
-        pagination={pagination}
-        paginationPageSize={paginationPageSize}
+        // pagination={pagination}
+        // paginationPageSize={paginationPageSize}
         columnDefs={gridheadCells}
         rowData={currentItems}
         onCellClicked={() => {}}
@@ -82,16 +85,16 @@ export default function AgGridTable({
         {...gridOptions}
       />
 
-      {/* <PaginationComponent
+      <PaginationComponent
         totalItems={list.length}
         itemsPerPage={itemsPerPage}
         currentPage={currentPage}
         onChangeItemsPerPage={handleItemsPerPageChange}
         setCurrentPage={setCurrentPage}
-        list={list}
         indexOfFirstItem={indexOfFirstItem}
         indexOfLastItem={indexOfLastItem}
-      /> */}
+        setItemsPerPage={setItemsPerPage}
+      />
     </Box>
   );
 }

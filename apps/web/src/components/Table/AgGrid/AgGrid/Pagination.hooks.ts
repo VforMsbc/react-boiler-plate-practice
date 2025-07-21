@@ -25,6 +25,7 @@ const usePagination = (list: IUserDetailsData[]) => {
     indexOfLastItem,
     handleItemsPerPageChange,
     setCurrentPage,
+    setItemsPerPage
   };
 };
 
