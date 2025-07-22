@@ -31,6 +31,7 @@ const AgPieChart = ({
   const { themeMode } = useContext(ThemeModeContext);
   const options: AgChartOptions = {
     // theme:"ag-material",
+    
     theme: themeMode === 'light' ? 'ag-material' : 'ag-material-dark',
     data,
     height,
